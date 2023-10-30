@@ -1,9 +1,9 @@
 export interface PriceSliderUI {
-  value: string;
+  value: number;
   handleClickAmount: (value: number) => void;
 }
 
 export interface BasicSliderUI {
-  value: string;
+  value: number;
   handleClickTerm: (value: number) => void;
 }
