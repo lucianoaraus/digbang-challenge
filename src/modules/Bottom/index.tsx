@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ModalContext from "../../context/ModalContext";
+import ModalContext from "../../components/Modal/ModalContext";
 import { formatNumber } from "../../utils/formaters";
 import { BottomUI } from "../../models/BottomUI";
 

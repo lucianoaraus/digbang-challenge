@@ -1,5 +1,8 @@
 import { createContext, useState } from "react";
-import { ModalContextUI, ModalProviderUI } from "../../models/ModalContextUI";
+import {
+  ModalContextUI,
+  ModalProviderUI,
+} from "../../../models/ModalContextUI";
 
 const ModalContext = createContext<ModalContextUI>({
   creditModalOpen: Boolean,

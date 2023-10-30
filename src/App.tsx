@@ -1,14 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import ModalContext from "./context/ModalContext";
-
+import ModalContext from "./components/Modal/ModalContext";
+import PriceSlider from "./modules/Sliders/PriceSlider";
+import BasicSlider from "./modules/Sliders/BasicSlider";
 import Modal from "./components/Modal";
-import PriceSlider from "./components/Sliders/PriceSlider";
-import BasicSlider from "./components/Sliders/BasicSlider";
-import Bottom from "./components/Bottom";
-
+import Bottom from "./modules/Bottom";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import PaidIcon from "@mui/icons-material/Paid";
-
 import { formatNumber } from "./utils/formaters";
 
 import styles from "./styles.module.scss";
