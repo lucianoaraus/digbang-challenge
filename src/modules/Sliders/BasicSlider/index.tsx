@@ -10,16 +10,18 @@ export default function BasicSlider({
   value,
   handleClickTerm,
 }: BasicSliderUI): React.ReactElement {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    const parseData = value === "" ? 0 : parseInt(value);
+    handleClickTerm(parseData);
+  };
+
   return (
     <div className={styles.sliderContainer}>
       <div className={styles.sliderHeader}>
         <p>PLAZO</p>
         <input
-          onChange={(e) => {
-            const value = e.target.value;
-            const parseData = value === "" ? 0 : parseInt(value);
-            handleClickTerm(parseData);
-          }}
+          onChange={handleOnChange}
           value={value}
           type="string"
           maxLength={2}

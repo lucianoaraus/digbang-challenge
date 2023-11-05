@@ -11,15 +11,17 @@ export default function PriceSlider({
   value,
   handleClickAmount,
 }: PriceSliderUI): React.ReactElement {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const parseData = parseFormatedNumber(e.target.value);
+    handleClickAmount(parseData);
+  };
+
   return (
     <div className={styles.sliderContainer}>
       <div className={styles.sliderHeader}>
         <p>MONTO TOTAL</p>
         <input
-          onChange={(e) => {
-            const parseData = parseFormatedNumber(e.target.value);
-            handleClickAmount(parseData);
-          }}
+          onChange={handleOnChange}
           value={formatNumber(value, ".")}
           type="string"
           maxLength={10}
