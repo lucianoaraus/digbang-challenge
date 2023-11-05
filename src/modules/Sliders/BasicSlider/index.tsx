@@ -19,14 +19,10 @@ export default function BasicSlider({
             const value = e.target.value;
             const parseData = value === "" ? 0 : parseInt(value);
             handleClickTerm(parseData);
-            if (parseData <= MIN_TERM) {
-              handleClickTerm(MIN_TERM);
-            } else if (parseData >= MAX_TERM) {
-              handleClickTerm(MAX_TERM);
-            }
           }}
           value={value}
           type="string"
+          maxLength={2}
         />
       </div>
       <div className={styles.slider}>

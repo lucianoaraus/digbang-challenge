@@ -6,7 +6,7 @@ import Modal from "./components/Modal";
 import Bottom from "./modules/Bottom";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import PaidIcon from "@mui/icons-material/Paid";
-import { formatNumber } from "./utils/formaters";
+import { formatNumber, adaptedAmount, adaptedTerm } from "./utils/formaters";
 
 import styles from "./styles.module.scss";
 
@@ -22,7 +22,7 @@ export default function App(): React.ReactElement {
   const [monthlyDebts, setMonthlyDebts] = useState<number>(0);
 
   useEffect(() => {
-    const monthlyDebt = totalAmount / term;
+    const monthlyDebt = adaptedAmount(totalAmount) / adaptedTerm(term);
     const formatetFloat = parseFloat(monthlyDebt.toFixed(2));
     setMonthlyDebts(formatetFloat);
   }, [totalAmount, term]);
@@ -58,7 +58,8 @@ export default function App(): React.ReactElement {
         <>
           <h2>Detalle de cuotas a pagar:</h2>
           <p>
-            {term} cuotas fijas de {formatNumber(monthlyDebts, ",")} por mes
+            {adaptedTerm(term)} cuotas fijas de{" "}
+            {formatNumber(monthlyDebts, ",")} por mes
           </p>
         </>
       </Modal>

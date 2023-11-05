@@ -19,14 +19,10 @@ export default function PriceSlider({
           onChange={(e) => {
             const parseData = parseFormatedNumber(e.target.value);
             handleClickAmount(parseData);
-            if (parseData <= MIN_AMOUNT) {
-              handleClickAmount(MIN_AMOUNT);
-            } else if (parseData >= MAX_AMOUNT) {
-              handleClickAmount(MAX_AMOUNT);
-            }
           }}
           value={formatNumber(value, ".")}
           type="string"
+          maxLength={10}
         />
       </div>
       <div className={styles.slider}>
